@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   validates :email, :presence   => true,
                     :format     => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
-  validade :password, :presence      => true,
-		      :confirmation  => true,
-                      :length        => { :within => 6..10 }
+  validates :password, :presence      => true,
+		       :confirmation  => true,
+                       :length        => { :within => 6..10 }
 
   before_save :encrypt_password
 

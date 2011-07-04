@@ -24,21 +24,21 @@ describe "LayoutLinks" do
 
   it "should have a signup page at '/signup'" do
     get '/signup'
-    response.should have_selector('title', :content => "Sign up")
+    response.should have_selector('title', :content => "sign up")
   end
 
   it "should have the right links on the layout" do
     visit root_path
-    click_link "About"
+    click_link "Sobre"
     response.should have_selector('title', :content => "About")
-    click_link "Help"
+    click_link "Ajuda"
     response.should have_selector('title', :content => "Help")
-    click_link "Contact"
+    click_link "Duvidas?"
     response.should have_selector('title', :content => "Contact")
-    click_link "Home"
+    click_link "Pagina Principal"
     response.should have_selector('title', :content => "Home")
-    click_link "Sign up now!"
-    response.should have_selector('title', :content => "Sign in")
+    click_link "Cadastre-se"
+    response.should have_selector('title', :content => "sign up")
   end
 
 end
